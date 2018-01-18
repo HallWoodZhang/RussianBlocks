@@ -52,7 +52,10 @@ public class Tetris extends JPanel {
     private Timer timer;
 
     public Tetris() {
-
+    	this.init();
+    	this.timer = new Timer(Tetris.TimeDelay, this.TimerListener);
+    	this.timer.start();
+    	this.addKeyListener(this.KeyListener);
     }
 
     public void setMode(String mode) {
